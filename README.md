@@ -3,22 +3,23 @@
 ## [`Demo: https://sveltekit-supabase-auth-grocery-list.vercel.app`](https://sveltekit-supabase-auth-grocery-list.vercel.app/).
 
 ## Developing
-ENV Vars Need: 
+
+ENV Vars Need:
+
 ```bash
 VITE_SUPABASE_URL=https://XXXXX.supabase.co
 VITE_SUPABASE_ANON_KEY=XXXXX
 ```
 
 Supabase `items` table has the following schema:
+
 ```ts
-interface Items {
-  id: string   /* primary key */;
-  created_at?: string;
-  text?: string;
-  completed?: boolean;
-  user_id?: string;
-  quantity?: number;
-};
+id: uuid; /* primary key - Default: now() */
+created_at: timestamptz;
+text: text;
+completed: bool; /*Default: false*/
+user_id: uuid;
+quantity: int8; /*Default: 1*/
 ```
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:

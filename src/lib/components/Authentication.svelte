@@ -3,9 +3,16 @@
 
 	let email;
 
+	console.log('import.meta.env.VITE_LOGIN_REDIRECT_URL:', import.meta.env.VITE_LOGIN_REDIRECT_URL);
+
 	async function handleLogin() {
 		try {
-			const { error } = await supabase.auth.signIn({ email });
+			const { error } = await supabase.auth.signIn(
+				{ email },
+				{
+					redirectTo: import.meta.env.VITE_LOGIN_REDIRECT_URL
+				}
+			);
 			if (error) {
 				throw error;
 			}

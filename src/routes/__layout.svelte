@@ -1,14 +1,14 @@
 <script>
 	import Notifications from 'svelte-notifications';
 	import '../app.css';
-	import { loadItems, user } from '$lib/stores';
+	import { loadItems, loadUser, user } from '$lib/stores';
 	import Authentication from '$lib/components/Authentication.svelte';
 	import supabase from '$lib/supabase';
 
-	user.set(supabase.auth.user());
+	loadUser();
 
 	supabase.auth.onAuthStateChange((_, session) => {
-		user.set(session?.user);
+		loadUser();
 		if (session?.user) {
 			loadItems();
 		}

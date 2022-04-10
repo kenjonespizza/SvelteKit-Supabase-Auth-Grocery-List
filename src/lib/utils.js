@@ -5,7 +5,7 @@ export function scrollToBottom() {
 		setTimeout(() => {
 			// Add the delay so that it has time to add the new item...
 			window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-		}, 100);
+		}, 1000);
 	}
 }
 

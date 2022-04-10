@@ -24,6 +24,7 @@ export const loadUser = async () => {
 loadUser();
 
 export const addItem = async (text) => {
+	await loadUser(); // I beleive this is overkill... but the deployed site randomly hits a phantom 500 error... this is just a potential patch
 	const _user = get(user);
 	const { data: item, error } = await supabase
 		.from('items')
