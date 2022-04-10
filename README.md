@@ -1,6 +1,6 @@
 # SvelteKit-Supabase-Auth Shopping List
 
-## [`Demo`](https://sveltekit-supabase-auth-shopping-list-88oiftupb-kenjwho.vercel.app/).
+## [`Demo: https://sveltekit-supabase-auth-grocery-list.vercel.app`](https://sveltekit-supabase-auth-grocery-list.vercel.app/).
 
 ## Developing
 ENV Vars Need: 
